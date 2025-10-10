@@ -11,12 +11,12 @@ const Login = () => {
           className="flex flex-col gap-4"
         >
           <input
-            className="border-2 border-emerald-600 rounded-full py-3 px-4 text-xl  outline-none bg-transparent placeholder:text-gray-500"
+            className="border border-emerald-600/40 rounded-full py-2.5 px-4 text-base  outline-none bg-[#1a1a1a] placeholder-gray-500 focus:ring-emerald-500 transition-all duration-200"
             type="email"
             placeholder="Enter your email"
           />
           <input
-            className="border-2 border-emerald-600 rounded-full py-3 px-4 text-xl outline-none bg-transparent placeholder:text-gray-500"
+            className="border border-emerald-600/40 rounded-full py-2.5 px-4 text-base  outline-none bg-[#1a1a1a] placeholder-gray-500 focus:ring-emerald-500 transition-all duration-200"
             type="password"
             placeholder="Enter your password"
           />
