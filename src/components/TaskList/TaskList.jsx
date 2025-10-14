@@ -7,7 +7,7 @@ const TaskList = () => {
           <div className='flex-shrink-0 h-full rounded-xl w-[300px] bg-amber-300'></div>
           <div className='flex-shrink-0 h-full rounded-xl w-[300px] bg-amber-300'></div>
           <div className='flex-shrink-0 h-full rounded-xl w-[300px] bg-amber-300'></div>
-          <div className='flex-shrink-0 h-full rounded-xl w-[300px] bg-amber-300'></div>
+          
       </div>
   )
 }
