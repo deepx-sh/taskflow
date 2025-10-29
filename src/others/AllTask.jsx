@@ -3,7 +3,7 @@ import { AuthContext } from '../context/AuthProviderContext';
 
 const AllTask = () => {
     const authData = useContext(AuthContext);
-    console.log(authData.employees);
+    
     
   return (
       <div id='tasklist' className='bg-[#111] p-6 mt-6 rounded-2xl   border border-emerald-700/30 shadow-[0_0_20px_rgba(16,185,129,0.1)]'>
@@ -29,15 +29,15 @@ const AllTask = () => {
                      <h2 className='text-gray-100 font-semibold text-lg'>{emp.firstName}</h2>
                      
                      <div className='flex flex-wrap gap-2'>
-                       <span className='bg-blue-600/30 text-blue-400 px-3 py-1 rounded-full text-xs font-medium'>New: {emp.taskCount.newTask}</span>
+                       <span className='bg-blue-600/30 text-blue-400 px-3 py-1 rounded-full text-xs font-medium'>🆕 New: {emp.taskCount.newTask}</span>
                        
-                       <span className='bg-yellow-600/30 text-yellow-400 px-3 py-1 rounded-full text-xs font-medium'>Active: {emp.taskCount.active}</span>
-                       
-
-                       <span className='bg-emerald-600/30 text-emerald-400 px-3 py-1 rounded-full text-xs font-medium'>Completed: {emp.taskCount.completed}</span>
+                       <span className='bg-yellow-600/30 text-yellow-400 px-3 py-1 rounded-full text-xs font-medium'>🕛 Active: {emp.taskCount.active}</span>
                        
 
-                       <span className='bg-red-600/30 text-red-400 px-3 py-1 rounded-full text-xs font-medium'>Failed: { emp.taskCount.failed}</span>
+                       <span className='bg-emerald-600/30 text-emerald-400 px-3 py-1 rounded-full text-xs font-medium'>✅ Completed: {emp.taskCount.completed}</span>
+                       
+
+                       <span className='bg-red-600/30 text-red-400 px-3 py-1 rounded-full text-xs font-medium'>❌ Failed: { emp.taskCount.failed}</span>
                      </div>
                    </div>
           </div>
