@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 
 const CreateTask = () => {
 
-  const [tasktitle, setTaskTitle] = useState("");
-  const [taskDesc, setTaskDesc] = useState("")
-  const [taskDate, setTaskDate] = useState("")
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("")
+  const [date, setDate] = useState("")
   const [assignTo, setAssignTo] = useState("");
   const [category, setCategory] = useState("")
   const submitHandler = (e) => {
     e.preventDefault();
     
-    setTaskTitle("");
-    setTaskDesc("");
-    setTaskDate("");
+    setTitle("");
+    setDescription("");
+    setDate("");
     setAssignTo("");
     setCategory("");
     
@@ -25,15 +25,15 @@ const CreateTask = () => {
           <div className="w-full md:w-[48%] flex flex-col gap-4">
             <div>
               <h3 className="text-sm text-gray-400 mb-1">Task Title</h3>
-            <input value={tasktitle} onChange={(e) => {
-              setTaskTitle(e.target.value)
+            <input value={title} onChange={(e) => {
+              setTitle(e.target.value)
               }} type="text" placeholder="Enter task title" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" />
             </div>
 
             <div>
               <h3 className="text-sm text-gray-400 mb-1">Date</h3>
-              <input value={taskDate} onChange={(e) => {
-              setTaskDate(e.target.value)
+              <input value={date} onChange={(e) => {
+              setDate(e.target.value)
               }} type="date" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"/>
             </div>
 
@@ -55,8 +55,8 @@ const CreateTask = () => {
           <div className="w-full md:w-[48%] flex flex-col gap-4">
             <h3 className="text-sm text-gray-400 mb-1">Description</h3>
           <textarea
-            value={taskDesc} onChange={(e) => {
-              setTaskDesc(e.target.value)
+            value={description} onChange={(e) => {
+              setDescription(e.target.value)
               }}
               cols={30}
               rows={10}
