@@ -1,6 +1,6 @@
 import React from "react";
-import { useState } from "react";
-const Header = () => {
+// import { useState } from "react";
+const Header = ({changeUser}) => {
   
   // const [userName, setUserName] = useState('');
 
@@ -12,7 +12,7 @@ const Header = () => {
 
   const handleLogOutUser = () => {
     localStorage.setItem('loggedInUser', '');
-    window.location.reload();
+    changeUser('')
   }
   return (
     <div className="flex items-center justify-between bg-[#111] px-6 py-5 rounded-2xl shadow-[0_0_20px_rgba(16,185,129,0.15)] border border-emerald-700/30">
