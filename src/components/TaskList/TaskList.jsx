@@ -4,7 +4,9 @@ import NewTask from "./NewTask";
 import CompleteTask from "./CompleteTask";
 import FailedTask from "./FailedTask";
 
-const TaskList = ({ data}) => {
+const TaskList = ({ data }) => {
+  console.log(data);
+  
   return (
     <div
       id="tasklist"

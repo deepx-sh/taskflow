@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AuthContext } from '../context/AuthProviderContext';
 
 const CreateTask = () => {
 
@@ -10,20 +11,23 @@ const CreateTask = () => {
 
 
   const [newTask, setNewTask] = useState({});
+  const [userData,setUserData]=useContext(AuthContext)
   const submitHandler = (e) => {
     e.preventDefault();
     
     setNewTask({ title, description, date,  category, active: false, newTask: true, completed: false, failed: false })
     
-    const data = JSON.parse(localStorage.getItem('employees'));
+    // const data = JSON.parse(localStorage.getItem('employees'));
+    const data = userData;
     data.filter((emp) => {
       if (assignTo === emp.firstName) {
-        emp.tasks.push(newTask)
+        emp.tasks.push(newTask);
+        emp.taskCount.newTask = emp.taskCount.newTask + 1;
         console.log(emp.tasks);
         
       }
     })
-    
+    setUserData(data)
     
     
     setTitle("");
