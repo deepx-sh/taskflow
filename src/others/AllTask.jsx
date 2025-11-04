@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../context/AuthProviderContext';
 
 const AllTask = () => {
-    const [userData,setUserData] = useContext(AuthContext);
+    const [userData] = useContext(AuthContext);
     
     
   return (
