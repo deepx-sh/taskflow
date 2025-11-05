@@ -4,11 +4,19 @@ const Login = ({handleLogin}) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("Form Submitted");
-    handleLogin(email,password)
+    
+    if (!email || !password) {
+      setError("Please fill the all field");
+      return;
+    }
+    const result = handleLogin(email, password)
+    if (!result) {
+      setError("Invalid email or password")
+    }
     setEmail("");
     setPassword("")
     
@@ -19,6 +27,12 @@ const Login = ({handleLogin}) => {
         <h2 className="text-2xl font-semibold text-center mb-6 text-emerald-400 tracking-wide">
           Login
         </h2>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-500/20  border border-red-500/50 rounded-lg text-red-400 text-sm">
+            {error}
+          </div>
+        )}
         <form action="" className="flex flex-col gap-4" onSubmit={submitHandler}>
           <input
             className="border border-emerald-600/40 rounded-full py-2.5 px-4 text-base  bg-[#1a1a1a] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
@@ -42,6 +56,11 @@ const Login = ({handleLogin}) => {
             Login
           </button>
         </form>
+
+        <div className="mt-4 text-center text-xs text-gray-400">
+          <p>Admin: admin@me.com / 123</p>
+          <p>Employee: employee1@example.com / 123</p>
+        </div>
       </div>
     </div>
   );
