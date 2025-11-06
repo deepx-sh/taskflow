@@ -8,14 +8,56 @@ const CreateTask = () => {
   const [date, setDate] = useState("")
   const [assignTo, setAssignTo] = useState("");
   const [category, setCategory] = useState("")
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-
-  const [newTask, setNewTask] = useState({});
-  const [userData,setUserData]=useContext(AuthContext)
+  // const [newTask, setNewTask] = useState({});
+  const [userData,setUserData,updateUserData]=useContext(AuthContext)
   const submitHandler = (e) => {
     e.preventDefault();
+    setError("");
+    setSuccess("");
+
+    if (!title || !description || !date || !assignTo || !category) {
+      setError("Please fill in all fields")
+      return
+    }
+
+    const employee = userData.find(emp => emp.firstName.toLowerCase() === assignTo.toLowerCase());
     
-    setNewTask({ title, description, date,  category, active: false, newTask: true, completed: false, failed: false })
+    if (!employee) {
+      setError(`Employee "${assignTo}" not found`);
+      return
+    }
+
+    const newTask = {
+      id: Date.now(),
+      title,
+      description,
+      date,
+      category,
+      active: false,
+      newTask: true,
+      completed: false,
+      failed:false
+    }
+
+    const updatedData = userData.map((emp) => {
+      if (emp.firstName.toLowerCase() === assignTo.toLowerCase()) {
+        return {
+          ...emp,
+          tasks: [...emp.tasks, newTask],
+          taskCount: {
+            ...emp.taskCount,
+            newTask: emp.taskCount.newTask + 1,
+          }
+        }
+      }
+      return emp;
+    })
+
+    updateUserData(updatedData);
+    // setNewTask({ title, description, date, category, active: false, newTask: true, completed: false, failed: false })
     
     // const data = JSON.parse(localStorage.getItem('employees'));
     const data = userData;
@@ -29,17 +71,25 @@ const CreateTask = () => {
     })
     setUserData(data)
     
-    
+    setSuccess(`Task assigned to ${employee.firstName} successfully`);
     setTitle("");
     setDescription("");
     setDate("");
     setAssignTo("");
     setCategory("");
     
+    setTimeout(()=> setSuccess(""),3000)
   }
   return (
      <div className="mt-8  p-6 bg-[#111] rounded-2xl border border-emerald-700/30 shadow-[0_0_10px_rgba(16.185,129,0.1)]">
-      <form onSubmit={(e) =>{
+      {error && (
+        <div className='mb-4 p-3 bg-red-500/20 border border-red-500/50 text-red-400 text-sm'>{ error}</div>
+      )}
+
+      {success && (
+        <div className='mb-4 p-3 bg-green-500/20 border border-green-500/50 text-green-400 text-sm'>{ success}</div>
+      )}
+      <form onSubmit={(e) => {
           submitHandler(e)
         }} className="flex flex-wrap gap-6 justify-between">
           <div className="w-full md:w-[48%] flex flex-col gap-4">
