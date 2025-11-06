@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AcceptTask = ({ data }) => {
+const AcceptTask = ({ data,onComplete,onFail }) => {
   console.log(data);
   
   return (
@@ -14,8 +14,8 @@ const AcceptTask = ({ data }) => {
       <p className="mt-3 text-xs sm:text-sm text-gray-100/90 leading-relaxed">{ data.description}</p>
       
       <div className='flex justify-between mt-4 gap-2'>
-        <button className='bg-green-500 hover:bg-green-600 py-2 px-3 text-xs sm:text-sm rounded-lg transition-colors duration-200 flex-1'>Mark as Completed</button>
-        <button className='bg-red-500 hover:bg-red-600 py-2 px-3 text-xs sm:text-sm rounded-lg transition-colors duration-200 flex-1'>Mark as Failed</button>
+        <button onClick={()=> onComplete(data.id)} className='bg-green-500 hover:bg-green-600 py-2 px-3 text-xs sm:text-sm rounded-lg transition-colors duration-200 flex-1'>Mark as Completed</button>
+        <button onClick={()=> onFail(data.id)} className='bg-red-500 hover:bg-red-600 py-2 px-3 text-xs sm:text-sm rounded-lg transition-colors duration-200 flex-1'>Mark as Failed</button>
       </div>
       </div>
   )

@@ -4,7 +4,7 @@ import NewTask from "./NewTask";
 import CompleteTask from "./CompleteTask";
 import FailedTask from "./FailedTask";
 
-const TaskList = ({ data }) => {
+const TaskList = ({ data,onAccept,onComplete,onFail }) => {
   
   
   return (
@@ -19,11 +19,11 @@ const TaskList = ({ data }) => {
       ) : (
           data.tasks.map((task,idx) => {
         if (task.active) {
-          return <AcceptTask key={idx} data={ task} />
+          return <AcceptTask key={idx} data={ task} onComplete={onComplete} onFail={onFail} />
         }
 
         if (task.newTask) {
-          return <NewTask key={idx} data={ task}/>
+          return <NewTask key={idx} data={task} onAccept={onAccept} />
         }
 
         if (task.completed) {
