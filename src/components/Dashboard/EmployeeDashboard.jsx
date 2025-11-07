@@ -6,81 +6,72 @@ import { AuthContext } from '../../context/AuthProviderContext';
 
 const EmployeeDashboard = ({ data, changeUser }) => {
   
-  const { userData, updateUserData } = useContext(AuthContext);
+  const [ userData, setUserData, updateUserData ] = useContext(AuthContext);
 
   const handleAcceptTask = (taskId) => {
-    const updatedData = userData.map((emp) => {
-      if (emp.id == data.id) {
-        const updatedTasks = emp.tasks.map((task) => {
-          if (task.id === taskId) {
-            return { ...task, newTask: false, active: true };
-          }
-          return task;
-        });
+    const updated = userData.map((emp) => {
+      if (emp.id === data.id) {
+        const tasks = emp.tasks.map(task=> task.id===taskId ? {...task,newTask:false,active:true,completed:false,failed:false}: task)
 
+        const counts = {
+          newTask: tasks.filter(t => t.newTask).length,
+          active: tasks.filter(t => t.active).length,
+          completed: tasks.filter(t => t.completed).length,
+          failed: tasks.filter(t => t.failed).length,
+        }
         return {
           ...emp,
-          tasks: updatedTasks,
-          taskCount: {
-            ...emp.taskCount,
-            newTask: emp.taskCount.newTask - 1,
-            active: emp.taskCount.active + 1,
-          }
+          tasks,
+          taskCount:counts
         }
       }
       return emp;
     })
-    updateUserData(updatedData)
+    updateUserData(updated)
   }
 
   const handleCompleteTask = (taskId) => {
-    const updatedData = userData.map((emp) => {
+    const updated = userData.map((emp) => {
       if (emp.id === data.id) {
-        const updatedTasks = emp.tasks.map((task) => {
-          if (task.id === taskId) {
-            return { ...task, active: false, completed: true };
-          }
-          return task;
-        });
-
+        const tasks = emp.tasks.map(task=> task.id===taskId ? {...task,newTask:false,active:false,completed:true,failed:false}: task)
+         
+        const counts = {
+          newTask: tasks.filter(t => t.newTask).length,
+          active: tasks.filter(t => t.active).length,
+          completed: tasks.filter(t => t.completed).length,
+          failed: tasks.filter(t => t.failed).length,
+        }
         return {
           ...emp,
-          tasks: updatedTasks,
-          taskCount: {
-            ...emp.taskCount,
-            active: emp.taskCount.active - 1,
-            completed: emp.taskCount.completed + 1,
-          }
+          tasks,
+          taskCount: counts
         }
       }
       return emp;
     })
-    updateUserData(updatedData)
+    updateUserData(updated)
   }
 
   const hanldeFailTask = (taskId) => {
-    const updatedData = userData.map((emp) => {
+    const updated = userData.map((emp) => {
       if (emp.id === data.id) {
-        const updatedTasks = emp.tasks.map((task) => {
-          if (task.id === taskId) {
-            return {...task,active:false,failed:true}
-          }
-          return task
-        })
+        const tasks = emp.tasks.map(task=> task.id===taskId ? {...task,newTask:false,active:false,completed:false,failed:true}: task)
 
+         const counts = {
+          newTask: tasks.filter(t => t.newTask).length,
+          active: tasks.filter(t => t.active).length,
+          completed: tasks.filter(t => t.completed).length,
+          failed: tasks.filter(t => t.failed).length,
+        }
         return {
           ...emp,
-          tasks: updatedTasks,
-          taskCount: {
-            ...emp.taskCount,
-            active: emp.taskCount.active - 1,
-            failed: emp.taskCount.failed + 1,
-          }
+          tasks,
+          taskCount:counts
         }
       }
       return emp;
     })
-    updateUserData(updatedData);
+    updateUserData(updated);
   }
 
   const currentEmployee = userData?.find(emp => emp.id === data.id) || data;

@@ -60,16 +60,16 @@ const CreateTask = () => {
     // setNewTask({ title, description, date, category, active: false, newTask: true, completed: false, failed: false })
     
     // const data = JSON.parse(localStorage.getItem('employees'));
-    const data = userData;
-    data.filter((emp) => {
-      if (assignTo === emp.firstName) {
-        emp.tasks.push(newTask);
-        emp.taskCount.newTask = emp.taskCount.newTask + 1;
-        console.log(emp.tasks);
+    // const data = userData;
+    // data.filter((emp) => {
+    //   if (assignTo === emp.firstName) {
+    //     emp.tasks.push(newTask);
+    //     emp.taskCount.newTask = emp.taskCount.newTask + 1;
+    //     console.log(emp.tasks);
         
-      }
-    })
-    setUserData(data)
+    //   }
+    // })
+    // setUserData(data)
     
     setSuccess(`Task assigned to ${employee.firstName} successfully`);
     setTitle("");
@@ -81,7 +81,7 @@ const CreateTask = () => {
     setTimeout(()=> setSuccess(""),3000)
   }
   return (
-     <div className="mt-8  p-6 bg-[#111] rounded-2xl border border-emerald-700/30 shadow-[0_0_10px_rgba(16.185,129,0.1)]">
+     <div className="mt-8  p-6 bg-[#111] rounded-2xl border border-emerald-700/30 shadow-[0_0_10px_rgba(16,185,129,0.1)]">
       {error && (
         <div className='mb-4 p-3 bg-red-500/20 border border-red-500/50 text-red-400 text-sm'>{ error}</div>
       )}

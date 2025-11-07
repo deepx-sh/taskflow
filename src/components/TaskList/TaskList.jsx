@@ -17,21 +17,21 @@ const TaskList = ({ data,onAccept,onComplete,onFail }) => {
           No tasks assigned yet
         </div>
       ) : (
-          data.tasks.map((task,idx) => {
+          data.tasks.map((task) => {
         if (task.active) {
-          return <AcceptTask key={idx} data={ task} onComplete={onComplete} onFail={onFail} />
+          return <AcceptTask key={task.id} data={ task} onComplete={onComplete} onFail={onFail} />
         }
 
         if (task.newTask) {
-          return <NewTask key={idx} data={task} onAccept={onAccept} />
+          return <NewTask key={task.id} data={task} onAccept={onAccept} />
         }
 
         if (task.completed) {
-          return <CompleteTask key={idx} data={ task}/>
+          return <CompleteTask key={task.id} data={ task}/>
         }
 
         if (task.failed) {
-          return <FailedTask key={idx} data={ task}/>
+          return <FailedTask key={task.id} data={ task}/>
         }
      })
       )}

@@ -3,7 +3,7 @@ import { AuthContext } from '../context/AuthProviderContext';
 
 const AllTask = () => {
     const [userData] = useContext(AuthContext);
-    
+    if (!userData) return null;
     
   return (
       <div id='tasklist' className='bg-[#111] p-6 mt-6 rounded-2xl   border border-emerald-700/30 shadow-[0_0_20px_rgba(16,185,129,0.1)]'>

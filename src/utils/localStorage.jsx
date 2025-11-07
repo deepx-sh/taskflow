@@ -6,6 +6,7 @@ const employees = [
     password: "123",
     tasks: [
       {
+        id: 101,
         title: "Update client report",
         description: "Revise the quarterly report with latest sales data.",
         date: "2025-10-20",
@@ -16,6 +17,7 @@ const employees = [
         failed: false
       },
       {
+        id: 102,
         title: "Fix login bug",
         description: "Resolve login issue reported by QA team.",
         date: "2025-10-18",
@@ -26,6 +28,7 @@ const employees = [
         failed: false
       },
       {
+        id: 103,
         title: "Prepare presentation",
         description: "Design slides for the upcoming stakeholder meeting.",
         date: "2025-10-22",
@@ -50,6 +53,7 @@ const employees = [
     password: "123",
     tasks: [
       {
+        id: 201,
         title: "Research competitors",
         description: "Gather information about top 5 competitors.",
         date: "2025-10-19",
@@ -60,6 +64,7 @@ const employees = [
         failed: false
       },
       {
+        id: 202,
         title: "Client follow-up",
         description: "Call client to confirm feedback on proposal.",
         date: "2025-10-17",
@@ -70,6 +75,7 @@ const employees = [
         failed: false
       },
       {
+        id: 203,
         title: "Organize assets",
         description: "Clean up shared drive and label folders correctly.",
         date: "2025-10-16",
@@ -80,6 +86,7 @@ const employees = [
         failed: true
       },
       {
+        id: 204,
         title: "Weekly team sync",
         description: "Attend and contribute to weekly sync-up.",
         date: "2025-10-21",
@@ -104,6 +111,7 @@ const employees = [
     password: "123",
     tasks: [
       {
+        id: 301,
         title: "Code review",
         description: "Review PRs assigned for module A.",
         date: "2025-10-18",
@@ -114,6 +122,7 @@ const employees = [
         failed: false
       },
       {
+        id: 302,
         title: "Onboard intern",
         description: "Help new intern with system setup.",
         date: "2025-10-20",
@@ -124,6 +133,7 @@ const employees = [
         failed: false
       },
       {
+        id: 303,
         title: "Update documentation",
         description: "Add new APIs to developer docs.",
         date: "2025-10-19",
@@ -134,6 +144,7 @@ const employees = [
         failed: true
       },
       {
+        id: 304,
         title: "Sprint retrospective",
         description: "Prepare notes for sprint retro.",
         date: "2025-10-21",
@@ -144,6 +155,7 @@ const employees = [
         failed: false
       },
       {
+        id: 305,
         title: "Build test cases",
         description: "Write tests for new feature release.",
         date: "2025-10-23",
@@ -168,6 +180,7 @@ const employees = [
     password: "123",
     tasks: [
       {
+        id: 401,
         title: "Product demo",
         description: "Give demo of new features to sales team.",
         date: "2025-10-20",
@@ -178,6 +191,7 @@ const employees = [
         failed: false
       },
       {
+        id: 402,
         title: "Design wireframes",
         description: "Create wireframes for mobile app redesign.",
         date: "2025-10-19",
@@ -188,6 +202,7 @@ const employees = [
         failed: false
       },
       {
+        id: 403,
         title: "Bug triage",
         description: "Organize and prioritize reported bugs.",
         date: "2025-10-18",
@@ -198,6 +213,7 @@ const employees = [
         failed: true
       },
       {
+        id: 404,
         title: "Feature planning",
         description: "Draft spec for next major feature.",
         date: "2025-10-21",
@@ -222,6 +238,7 @@ const employees = [
     password: "123",
     tasks: [
       {
+        id: 501,
         title: "Security audit",
         description: "Run audit on internal systems.",
         date: "2025-10-17",
@@ -232,6 +249,7 @@ const employees = [
         failed: false
       },
       {
+        id: 502,
         title: "Server backup",
         description: "Ensure daily backups are successful.",
         date: "2025-10-18",
@@ -242,6 +260,7 @@ const employees = [
         failed: false
       },
       {
+        id: 503,
         title: "Monitor uptime",
         description: "Track and report server uptime logs.",
         date: "2025-10-20",
@@ -252,6 +271,7 @@ const employees = [
         failed: false
       },
       {
+        id: 504,
         title: "Patch deployment",
         description: "Deploy critical security patch.",
         date: "2025-10-22",
@@ -262,6 +282,7 @@ const employees = [
         failed: false
       },
       {
+        id: 505,
         title: "Incident report",
         description: "Write report for last week's downtime.",
         date: "2025-10-19",
