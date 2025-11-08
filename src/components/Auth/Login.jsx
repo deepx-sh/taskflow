@@ -58,7 +58,7 @@ const Login = ({handleLogin}) => {
         </form>
 
         <div className="mt-4 text-center text-xs text-gray-400">
-          <p>Admin: admin@me.com / 123</p>
+          <p>Admin: admin@example.com / 123</p>
           <p>Employee: employee1@example.com / 123</p>
         </div>
       </div>

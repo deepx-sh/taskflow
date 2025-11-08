@@ -11,7 +11,7 @@ const CreateTask = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // const [newTask, setNewTask] = useState({});
+  
   const [userData,setUserData,updateUserData]=useContext(AuthContext)
   const submitHandler = (e) => {
     e.preventDefault();

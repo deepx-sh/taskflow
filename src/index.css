@@ -16,5 +16,13 @@ body{
 }
 
 #tasklist::-webkit-scrollbar{
-  display: none;
+  height: 8px;
+}
+
+#tasklist::-webkit-scrollbar-thumb{
+  background-color: #555;
+  border-radius: 20px;
+}
+#tasklist::-webkit-scrollbar-track{
+  background-color: #1c1c1c;
 }
