@@ -30,7 +30,7 @@ Each task goes through one of the following states:
 
 ## 🌐 Live Demo
 
-Check out the live demo [here]().
+Check out the live demo [here](https://taskflow-task-management.vercel.app/).
 
 ## 🏁 Getting Started
 
@@ -38,7 +38,7 @@ Check out the live demo [here]().
 
 ```bash
 git clone https://github.com/deepx-sh/taskflow.git
-cd task-management
+cd taskflow
 ```
 
 ### 2. Install dependencies
