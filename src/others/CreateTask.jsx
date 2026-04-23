@@ -133,7 +133,7 @@ const CreateTask = () => {
               placeholder="Enter Description"
               className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
             ></textarea>
-            <button type="submit" className="self-center bg-emerald-500 hover:bg-emerald-700 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-200 transform hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_10px_rgba(16,185,129,0.4)]">Submit</button>
+            <button type="submit" className="self-center bg-emerald-500 hover:bg-emerald-700 cursor-pointer text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-200 transform hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_10px_rgba(16,185,129,0.4)]">Submit</button>
           </div>
         </form>
       </div>
