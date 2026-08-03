@@ -97,7 +97,7 @@ const CreateTask = () => {
               <h3 className="text-sm text-gray-400 mb-1">Task Title</h3>
             <input value={title} onChange={(e) => {
               setTitle(e.target.value)
-              }} type="text" placeholder="Enter task title" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" />
+              }} type="text" placeholder="Enter task title" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" required/>
             </div>
 
             <div>
@@ -111,14 +111,14 @@ const CreateTask = () => {
               <h3 className="text-sm text-gray-400 mb-1">Assign to</h3>
               <input value={assignTo} onChange={(e) => {
               setAssignTo(e.target.value)
-              }} type="text" placeholder="Assign to" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"/>
+              }} type="text" placeholder="Assign to" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" required/>
             </div>
 
             <div>
               <h3 className="text-sm text-gray-400 mb-1">Category</h3>
               <input value={category} onChange={(e) => {
               setCategory(e.target.value)
-              }} type="text" placeholder="Category" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" />
+              }} type="text" placeholder="Category" className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" required />
             </div>
           </div>
 
@@ -131,7 +131,7 @@ const CreateTask = () => {
               cols={30}
               rows={10}
               placeholder="Enter Description"
-              className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
+              className="w-full px-4 py-2 bg-[#1a1a1a] border border-gray-700 rounded-lg text-gray-200 placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200" required
             ></textarea>
             <button type="submit" className="self-center bg-emerald-500 hover:bg-emerald-700 cursor-pointer text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-200 transform hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_10px_rgba(16,185,129,0.4)]">Submit</button>
           </div>

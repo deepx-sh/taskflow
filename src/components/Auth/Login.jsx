@@ -42,6 +42,7 @@ const Login = ({handleLogin}) => {
               setEmail(e.target.value)
             }}
             placeholder="Enter your email"
+            required
           />
           <input
             className="border border-emerald-600/40 rounded-full py-2.5 px-4 text-base  bg-[#1a1a1a] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"
@@ -51,6 +52,7 @@ const Login = ({handleLogin}) => {
               setPassword(e.target.value)
             }}
             placeholder="Enter your password"
+            required
           />
           <button className="mt-5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-full text-base transition-all duration-200 transform hover:scale-[1.03] active:scale-[0.97] shadow-[0_0_10px_rgba(16,185,129,0.4) cursor-pointer">
             Login
